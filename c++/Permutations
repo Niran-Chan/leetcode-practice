@@ -1,0 +1,33 @@
+class Solution {
+public:
+    
+    void helper(int n,vector<int>& nums,vector<int>& 
+comb,vector<vector<int>>& res)
+    {
+        if(n == 0)
+        {res.push_back(comb);return;}
+        
+        
+        for(int i =0; i < n;i++)
+        {
+            comb.push_back(nums[i]);
+            swap(nums[i],nums[n-1]); //push to the back of the vector so 
+we do not iterate through it anymore
+            helper(n-1,nums,comb,res);
+            swap(nums[i],nums[n-1]);
+            comb.pop_back();
+            
+            
+        }
+        return;
+    }
+    
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<int> comb;
+
+        vector<vector<int>> res;
+    
+        helper(nums.size(),nums,comb,res);
+        return res;
+    }
+};
