@@ -27,3 +27,24 @@ int main()
 
     return 0 ;
 }
+
+//Iterative Method
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        //Binary Search
+        int l=0,r = nums.size(),m =0;
+        while(l < r)
+        {
+  
+            m = int((l+r)/2);
+            if(nums[m] == target)
+                return m;
+            if(nums[m] > target)
+                r = m;
+            else
+                l = m+1;
+        }
+        return l;
+    }
+};

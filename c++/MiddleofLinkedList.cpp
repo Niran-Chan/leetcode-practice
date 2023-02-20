@@ -1,20 +1,21 @@
 class Solution {
 public:
-    string reverseWords(string s) {
-        //use stack to store and reverse
-        stack <char> stk;
-        string res = "";
-        for(int i =0 ; i < s.size();i++)
-        {
-            if(s[i] == ' ')
-            {
-                while(!stk.empty()) {res+=stk.top();stk.pop();}
-                res += ' ';
-            }
-             else stk.push(s[i]);
-            
+    ListNode* middleNode(ListNode* head) {
+        int cnt = 0;
+        ListNode* fast = head,*slow = head;
+        //Traverse to end of linked list
+        while(fast){
+            fast = fast->next;
+            cnt++;
         }
-          while(!stk.empty()) {res+=stk.top();stk.pop();}
-        return res;
+        cnt /=2;
+        while(cnt)
+            {
+                slow= slow->next;
+                cnt--;
+            }
+        return slow;
+
+
     }
 };
