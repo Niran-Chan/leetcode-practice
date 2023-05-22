@@ -27,5 +27,13 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ]
+  ],
+  "files.associations": {
+    "string": "cpp",
+    "vector": "cpp",
+    "chrono": "cpp",
+    "limits": "cpp",
+    "ratio": "cpp",
+    "algorithm": "cpp"
+  }
 }
